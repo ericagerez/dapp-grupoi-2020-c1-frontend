@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
   - node_modules
 script:
-  - npm test
-  - npm run build
+- npm test
+- npm run build
+deploy:
+  api_key:
+    secure: Rdji96tlz4JO9a4DW1ZTsfcnhMpTeJN9aXXQufAfQJRjpR2wprYTzhy49wmlVIKDr+f9tuHKTVlKExHMjjBmn9+VHCPzUC+/SV4jNHxmZi5O7XljgSKCAZNQ+ruqtfOe8pow6EI6bNTiboHJsBmiWsjhZoZPsRclgvbM8xSJPwS/d2u3nIwyUJo+8+svi2Dqr1RHN3aciuGJquVkq1AJWda4JSImPG1rZmA7+XjDZq9RYURdsiYablsvLJW0AsSXcgFx5TQleYI4BDdIEjj5AfhVW2pzAdLp8Ac97g5Hqm9aHY2CEtytQFfA6+q5PyayDUx4Q2q0AReDdmZt4ozpcha4G9hd1r6053otp/UvII++zuGInNl6Ii6iBFip28meL5JG0+GzEwsNVB+CEkVmk2GtTEXQk/XOMmfpqrXiJGwMmt8oCfY/C5UVIrUrPB0rHnQPamTaWkzSgltsn8q5GfwDkZdp+zuKSkwILmt14yio5s6aR1mZu1ekcEA8ywf3orMG/9WsY0I5Hr285/Z/O6mZfGYkEOyDUFeBajBc05iP27fAA+iRmzANpvW6V145K1baSFc+qTHe6gu9iYRh67JHjCTCAirI9XBOobD0kK6LTLpcwcYNJohGS5HTtzvpK7t6YrN3F1rjp3I35oWBytW/iV9AlrJ8i8BgBXleuN8=
+  app: compramundo
