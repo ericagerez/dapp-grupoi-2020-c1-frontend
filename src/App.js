@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
-import Home from './components/Home';
+import Register from './components/CommerceRegister/Register';
 
 
 const theme = createMuiTheme({
@@ -15,7 +15,7 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Register />
     </ThemeProvider>
   )
 }
