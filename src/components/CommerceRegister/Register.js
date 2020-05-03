@@ -14,6 +14,7 @@ import { useStepper } from './Stepper';
 import commerceCategoryProvider from '../../api/commerce-category'
 import paymentMethodProvider from '../../api/payment-method'
 import CommerceDetailForm from './CommerceDetailForm';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -119,6 +120,7 @@ function validateCommerceDetailForm(category, selectedPaymentMethods) {
 
 export default function CommerceRegister() {
   const classes = useStyles();
+  const history = useHistory();
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -189,6 +191,9 @@ export default function CommerceRegister() {
   function handleLogin() {
     setLoading(true)
     registerCommerce(email, password, commerceName, commerceAddress, commerceMaxDistance, selectedCategory, selectedPaymentMethods)
+      .then(()=>{
+        history.push('/registration/commerce/success')
+      })
       .finally(() => {
         setLoading(false)
       })
