@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Typography, Grid, Button, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -15,6 +16,8 @@ export default function Welcome() {
   const classes = useStyles();
   const theme = useTheme()
   const sm = useMediaQuery(theme.breakpoints.up('sm'));
+  const history = useHistory()
+
 
   return <div className={classes.heroContent}>
     <Container maxWidth="sm">
@@ -27,14 +30,19 @@ export default function Welcome() {
       <div className={classes.heroButtons}>
         <Grid container spacing={2} justify="center">
           <Grid item>
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" onClick={()=>history.push('/login')}>
               Iniciar sesión
           </Button>
           </Grid>
           <Grid item>
-            <Button variant="outlined" color="primary">
+            <Button variant="outlined" color="primary" onClick={()=>history.push('/registration/commerce')}>
               Crear una cuenta
-          </Button>
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="outlined" color="secondary" onClick={()=>history.push('/map-example')}>
+              Ver Mapa
+            </Button>
           </Grid>
         </Grid>
       </div>

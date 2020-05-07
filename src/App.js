@@ -7,6 +7,7 @@ import CommerceRegister from './components/CommerceRegister/Register';
 import Login from './components/Login';
 import Home from './components/Home'
 import SuccessPage from './components/SuccessPage';
+import MapExample from './components/Map';
 
 const theme = createMuiTheme({
   palette: {
@@ -19,18 +20,21 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-          <Route path="/registration/commerce/success">
-            <SuccessPage text="Se registró el comercio correctamente" />
-          </Route>
-          <Route path="/registration/commerce">
-            <CommerceRegister />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+        <Route path="/registration/commerce/success">
+          <SuccessPage text="Se registró el comercio correctamente" />
+        </Route>
+        <Route path="/registration/commerce">
+          <CommerceRegister />
+        </Route>
+        <Route path="/map-example">
+          <MapExample />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/" exact>
+          <Home />
+        </Route>
       </BrowserRouter>
     </ThemeProvider>
   )
