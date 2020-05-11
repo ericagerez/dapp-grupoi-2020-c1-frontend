@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import productProvider from '../../api/product';
-import { TextField, Select, MenuItem, InputLabel } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -83,7 +82,7 @@ useEffect(()=>{
                       Comprar
                     </Button>
                     <Button size="small" color="primary">
-                      AGregar al carrito
+                      Agregar al carrito
                     </Button>
                   </CardActions>
                 </Card>
