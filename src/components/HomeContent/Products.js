@@ -59,6 +59,11 @@ export default function Products() {
     setOrder(sorted);
   };
 
+  const search = e => {
+    const filtered = products.filter(p => p.name.toUpperCase().includes(e))
+    setProducts(filtered)
+  }
+
 useEffect(()=>{
     productProvider.getAll().then(products=>setProducts(products))}, 
     [setProducts])
@@ -69,6 +74,13 @@ useEffect(()=>{
       <main>
         {/* Hero unit */}
         <Container className={classes.cardGrid} maxWidth="md">
+            <TextField 
+              id="standard-search" 
+              label="&#x1F50E;Buscar" 
+              type="search" 
+              fullWidth
+              onChange={(e) => search(e.target.value.toUpperCase())}
+            />
             <FormControl className={classes.formControl} maxWidth="md">
               <InputLabel shrink id="demo-simple-select-placeholder-label-label">
                 Ordenar
