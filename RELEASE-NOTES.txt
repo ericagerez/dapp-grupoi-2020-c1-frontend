@@ -1,0 +1,20 @@
+---------------------------------------------------------------------
+TAG ENTREGA 1.0
+---------------------------------------------------------------------
+NEW FEATURES:
+* Model creation
+* API for Commerce, Products, Category Commerce, Category Product, Geo, Payment Method 
+* Frontend for login
+* Registration commerce from frontend, including validations for fields
+* Rendering of products shown on the main page of the application, being able to access the information of each one of them 
+* Incorporation of map in the frontend
+
+
+NOTES:
+* Implement and test logic for the remaining models
+* Show from frontend distance and time between two points on the map
+* Filter products by category, brand and commerce
+
+KNOWN ISSUES:
+* Fix bug for product search
+* Fix bug for order product by price
