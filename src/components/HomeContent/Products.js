@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import productProvider from '../../api/product';
-import { TextField, Select, MenuItem, InputLabel } from '@material-ui/core'
+import { TextField, Select, MenuItem, InputLabel, FormControl , FormHelperText} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -37,7 +37,14 @@ const useStyles = makeStyles((theme) => ({
   },
   textCenter: {
     textAlign: 'center'
-  }
+  },
+  formControl: {
+    margin: theme.spacing(4),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
 }));
 
 export default function Products() {
@@ -45,6 +52,12 @@ export default function Products() {
   const classes = useStyles();
   
   const [products, setProducts] = useState([])
+  const [order, setOrder] = useState('');
+
+  const sortProducts = type => {
+    const sorted = products.sort((a, b) => type==='higher' ? b.price - a.price : a.price - b.price);
+    setOrder(sorted);
+  };
 
 useEffect(()=>{
     productProvider.getAll().then(products=>setProducts(products))}, 
@@ -56,7 +69,25 @@ useEffect(()=>{
       <main>
         {/* Hero unit */}
         <Container className={classes.cardGrid} maxWidth="md">
-          
+            <FormControl className={classes.formControl} maxWidth="md">
+              <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+                Ordenar
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-placeholder-label-label"
+                id="demo-simple-select-placeholder-label"
+                value={order}
+                onChange={(e) => sortProducts(e.target.value)}
+                displayEmpty
+                className={classes.selectEmpty}
+              >
+                <MenuItem value="">
+                  <em>Ninguno</em>
+                </MenuItem>
+                <MenuItem value="lower">Menor Precio</MenuItem>
+                <MenuItem value="higher">Mayor Precio</MenuItem>
+              </Select>
+            </FormControl>
           {/* End hero unit */}
           <Grid container spacing={4}>
             {products.map((card) => (
