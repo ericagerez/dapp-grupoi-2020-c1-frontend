@@ -12,6 +12,7 @@ import Container from '@material-ui/core/Container';
 import productProvider from '../../api/product';
 import { TextField, Select, MenuItem, InputLabel, FormControl , FormHelperText} from '@material-ui/core'
 
+
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -114,7 +115,7 @@ useEffect(()=>{
                       Comprar
                     </Button>
                     <Button size="small" color="primary">
-                      AGregar al carrito
+                      Agregar al carrito
                     </Button>
                   </CardActions>
                 </Card>
