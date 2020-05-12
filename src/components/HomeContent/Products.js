@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import productProvider from '../../api/product';
-import { TextField, Select, MenuItem, InputLabel, FormControl , FormHelperText} from '@material-ui/core'
+import { TextField, Select, MenuItem, InputLabel, FormControl} from '@material-ui/core'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -74,7 +74,7 @@ useEffect(()=>{
       <CssBaseline />
       <main>
         {/* Hero unit */}
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container className={classes.cardGrid} maxwidth="md">
             <TextField 
               id="standard-search" 
               label="&#x1F50E;Buscar" 
@@ -82,7 +82,7 @@ useEffect(()=>{
               fullWidth
               onChange={(e) => search(e.target.value.toUpperCase())}
             />
-            <FormControl className={classes.formControl} maxWidth="md">
+            <FormControl className={classes.formControl} maxwidth="md">
               <InputLabel shrink id="demo-simple-select-placeholder-label-label">
                 Ordenar
               </InputLabel>
